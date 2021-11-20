@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover, shrink-to-fit=no">
+  <meta name="theme-color" content="#82d7aa">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <title>NookLink</title>
+  <link rel="stylesheet" href="/build/styles.css">
+  <script src="https://unpkg.com/alpinejs@3.5.1/dist/cdn.min.js" defer></script>
+</head>
+<body class="flex items-center justify-center min-h-screen bg-polka-dot">
+  <div class="absolute flex items-center justify-center w-full h-full z-[9999] bg-[#f4f1e3]" id="loader">
+    <img src="/src/images/loading-spinning-bubbles.svg" class="w-12 h-12" alt="Loading icon">
+  </div>
+  <main class="w-full max-w-[30rem] m-auto px-5 py-8 grid grid-cols-1 gap-y-3">
+    <div class="w-[9rem] mx-auto opacity-0 transform scale-90 transition-all ease-in-out delay-100 duration-200" id="nl-logo">
+      <img src="/src/images/NookLink_Logo_EN.png" class="max-w-full h-auto"  width="614" height="119" alt="NookLink logo">
+    </div>
+    <div class="py-8 w-full bg-[#f4f1e3] rounded-[4.5rem]">
+      <div class="flex items-center font-semibold text-sm text-[#dfd9c9] tracking-normal mb-8 px-8 sm:px-10 opacity-0 transition-opacity delay-100 duration-500" id="status-bar">
+        <div class="flex-grow flex items-center gap-x-2">
+          <button class="w-10 h-6 flex items-center justify-center bg-[#908669] focus:bg-[#dfd9c9] text-[#f4f1e3] rounded-full transform active:scale-80 transition-all" type="button">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" viewBox="0 0 20 20" fill="currentColor">
+              <path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z" />
+              <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z" />
+            </svg>
+          </button>
+          <span>Francis</span>
+        </div>
+        <div class="flex-none" x-data="{ today: new Date() }">
+          <span class="place-self-end" x-text="today.getDate() + '/' + (today.getMonth() + 1)">25/12</span>
+        </div>
+      </div>
+      <div class="grid grid-cols-3 gap-4 px-6 sm:px-12 text-[#4d3906] opacity-0 transform scale-90 transition-all ease-in-out delay-100 duration-200" id="app-drawer">
+        <button class="flex flex-col items-center gap-y-1.5" type="button">
+          <img src="/src/images/Passport_NookLink_Icon.png" class="max-w-full h-auto transform scale-100 active:scale-85 transition-transform" width="236" height="236" alt="Passport Icon">
+          <span class="text-xs font-semibold tracking-tighter whitespace-nowrap">Passport</span>
+        </button>
+        <button class="flex flex-col items-center gap-y-1.5" type="button">
+          <img src="/src/images/Keyboards_NookLink_Icon.png" class="max-w-full h-auto transform scale-100 active:scale-85 transition-transform" width="236" height="236" alt="Keyboard Icon">
+          <span class="text-xs font-semibold tracking-tighter whitespace-nowrap">Keyboards</span>
+        </button>
+        <button class="flex flex-col items-center gap-y-1.5" type="button">
+          <img src="/src/images/Best_Friends_NookLink_Icon.png" class="max-w-full h-auto transform scale-100 active:scale-85 transition-transform" width="236" height="236" alt="Best Friends Icon">
+          <span class="text-xs font-semibold tracking-tighter whitespace-nowrap">Best Friends</span>
+        </button>
+        <button class="flex flex-col items-center gap-y-1.5" type="button">
+          <img src="/src/images/Reactions_NookLink_Icon.png" class="max-w-full h-auto transform scale-100 active:scale-85 transition-transform" width="236" height="236" alt="Reactions Icon">
+          <span class="text-xs font-semibold tracking-tighter whitespace-nowrap">Reactions</span>
+        </button>
+        <button class="flex flex-col items-center gap-y-1.5" type="button">
+          <img src="/src/images/Catalog_NookLink_Icon.png" class="max-w-full h-auto transform scale-100 active:scale-85 transition-transform" width="236" height="236" alt="Catalog Icon">
+          <span class="text-xs font-semibold tracking-tighter whitespace-nowrap">Catalog</span>
+        </button>
+        <button class="flex flex-col items-center gap-y-1.5" type="button">
+          <img src="/src/images/Nook_Points_NookLink_Icon.png" class="max-w-full h-auto transform scale-100 active:scale-85 transition-transform" width="236" height="236" alt="Nook Points Icon">
+          <span class="text-xs font-semibold tracking-tighter whitespace-nowrap">Nook Points</span>
+        </button>
+        <button class="flex flex-col items-center gap-y-1.5" type="button">
+          <img src="/src/images/Designs_NookLink_Icon.png" class="max-w-full h-auto transform scale-100 active:scale-85 transition-transform" width="236" height="236" alt="Designs Icon">
+          <span class="text-xs font-semibold tracking-tighter whitespace-nowrap">Designs</span>
+        </button>
+        <button class="flex flex-col items-center gap-y-1.5" type="button">
+          <img src="/src/images/Settings_NookLink_Icon.png" class="max-w-full h-auto transform scale-100 active:scale-85 transition-transform" width="236" height="236" alt="Settings Icon">
+          <span class="text-xs font-semibold tracking-tighter whitespace-nowrap">Settings</span>
+        </button>
+      </div>
+    </div>
+  </main>
+  <script>
+    window.addEventListener("load", () => setInterval(() => {
+      const loader = document.querySelector("#loader");
+      const nlLogo = document.querySelector("#nl-logo");
+      const statusBar = document.querySelector("#status-bar");
+      const appDrawer = document.querySelector("#app-drawer");
+
+      loader.style.display = "none";
+      nlLogo.classList.remove("opacity-0", "scale-90");
+      nlLogo.classList.add("opacity-1", "scale-100");
+      statusBar.classList.remove("opacity-0");
+      statusBar.classList.add("opacity-1");
+      appDrawer.classList.remove("opacity-0", "scale-90");
+      appDrawer.classList.add("opacity-1", "scale-100");
+    }, 2000));
+  </script>
+</body>
+</html>

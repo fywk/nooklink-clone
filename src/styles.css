@@ -1,0 +1,25 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  button {
+    @apply focus:outline-none;
+  }
+}
+
+@layer components {
+  .bg-polka-dot {
+    width: 100%;
+    height: 100%;
+    background-color: #ede1b8;
+    background-image: radial-gradient(#f4ecca 15%, transparent 15%),
+      radial-gradient(#f4ecca 14%, transparent 14%);
+    background-size: 25px 25px;
+    background-position: 0 0, 12.5px 12.5px;
+    background-repeat: repeat;
+  }
+}
+
+@layer utilities {
+}
