@@ -1,12 +1,12 @@
+<h1 align="center">NookLink UI Clone</h1>
+
+<p align="center">This is the UI clone of NookLink service in the Nintendo Switch Online mobile app.</p>
+
 <p align="center">
   <img src="src/images/screenshot.png" alt="Screenshot">
 </p>
 
-# NookLink UI Clone
-
-This is the UI clone of NookLink service in the Nintendo Switch Online mobile app.
-
-[Live demo](https://fywk.github.io/nooklink-clone/)
+## [Live demo](https://fywk.github.io/nooklink-clone/)
 
 ## Image assets
 
