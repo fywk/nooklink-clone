@@ -1,26 +1,28 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
+  <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover, shrink-to-fit=no">
   <meta name="theme-color" content="#82d7aa">
   <meta name="apple-mobile-web-app-capable" content="yes">
   <title>NookLink</title>
+  <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
   <link rel="stylesheet" href="build/styles.css">
   <script src="https://unpkg.com/alpinejs@3.5.1/dist/cdn.min.js" defer></script>
 </head>
-<body class="flex items-center justify-center min-h-screen bg-polka-dot">
-  <div class="absolute flex items-center justify-center w-full min-h-screen z-[9999] bg-[#f4f1e3]" id="loader">
+<body class="flex items-center justify-center min-h-screen bg-polka-dot" ontouchstart>
+  <div class="absolute flex items-center justify-center w-full min-h-screen z-[9999] bg-alabaster" id="loader">
     <img src="src/images/loading-spinning-bubbles.svg" class="w-12 h-12" alt="Loading Spinning Bubbles">
   </div>
   <main class="w-full max-w-[30rem] m-auto px-5 py-8 grid grid-cols-1 gap-y-3">
     <div class="w-[9rem] mx-auto opacity-0 transform scale-90 transition ease-in-out delay-100 duration-200" id="logo-container">
       <img src="src/images/NookLink_Logo_EN.png" class="max-w-full h-auto"  width="614" height="119" alt="NookLink Logo EN">
     </div>
-    <div class="pt-8 pb-9 w-full bg-[#f4f1e3] rounded-[4.5rem]">
-      <div class="flex items-center font-semibold text-sm text-[#dfd9c9] tracking-normal mb-8 px-10 opacity-0 transition-opacity delay-100 duration-500" id="status-bar">
+    <div class="pt-8 pb-9 w-full bg-alabaster rounded-[4.5rem]">
+      <div class="flex items-center font-semibold text-sm text-bone tracking-normal mb-8 px-10 opacity-0 transition-opacity delay-100 duration-500" id="status-bar">
         <div class="flex-grow flex items-center gap-x-2">
-          <button class="w-10 h-6 flex items-center justify-center text-[#f4f1e3] rounded-full transform active:scale-90 transition" type="button" x-data="{ notification: true }" :class="notification ? 'bg-[#908669]' : 'bg-[#dfd9c9]'" @click="notification = ! notification">
+          <button class="w-10 h-6 flex items-center justify-center text-alabaster rounded-full transform active:scale-90 transition" type="button" x-data="{ notification: true }" :class="notification ? 'bg-beaver' : 'bg-bone'" @click="notification = ! notification">
             <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" viewBox="0 0 20 20" fill="currentColor">
               <path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z" />
               <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z" />
@@ -33,19 +35,19 @@
         </div>
       </div>
       <div id="app-grid"
-        class="grid grid-cols-3 gap-4 px-8 sm:px-12 text-[#4d3906] opacity-0 transform scale-90 transition ease-in-out delay-100 duration-200"
+        class="grid grid-cols-3 gap-4 px-8 sm:px-12 text-dark-bronze-coin opacity-0 transform scale-90 transition ease-in-out delay-100 duration-200"
         x-data="{ apps: [
-          { id: 1, name: 'Passport', icon: 'Passport_NookLink_Icon.png' },
-          { id: 2, name: 'Keyboards', icon: 'Keyboards_NookLink_Icon.png' },
-          { id: 3, name: 'Best Friends', icon: 'Best_Friends_NookLink_Icon.png' },
-          { id: 4, name: 'Reactions', icon: 'Reactions_NookLink_Icon.png' },
-          { id: 5, name: 'Catalog', icon: 'Catalog_NookLink_Icon.png' },
-          { id: 6, name: 'Nook Points', icon: 'Nook_Points_NookLink_Icon.png' },
-          { id: 7, name: 'Island Newspaper', icon: 'Designs_NookLink_Icon.png' },
-          { id: 8, name: 'Settings', icon: 'Settings_NookLink_Icon.png' },
+          { name: 'Passport', icon: 'Passport_NookLink_Icon.png' },
+          { name: 'Keyboards', icon: 'Keyboards_NookLink_Icon.png' },
+          { name: 'Best Friends', icon: 'Best_Friends_NookLink_Icon.png' },
+          { name: 'Reactions', icon: 'Reactions_NookLink_Icon.png' },
+          { name: 'Catalog', icon: 'Catalog_NookLink_Icon.png' },
+          { name: 'Nook Points', icon: 'Nook_Points_NookLink_Icon.png' },
+          { name: 'Designs', icon: 'Designs_NookLink_Icon.png' },
+          { name: 'Settings', icon: 'Settings_NookLink_Icon.png' },
         ]}"
       >
-        <template x-for="app in apps" :key="app.id">
+        <template x-for="app in apps">
           <button class="flex flex-col items-center gap-y-1.5" type="button">
             <img :src="'src/images/' + app.icon" class="max-w-full h-auto transform scale-100 active:scale-90 transition-transform" width="236" height="236" :alt="app.name + ' Icon'">
             <span class="text-xs font-semibold tracking-tighter whitespace-nowrap" x-text="app.name"></span>
